@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const REQUIRED_ENVS = ["API_URL", "PRODUCTION", "DEVELOPMENT"];
+const REQUIRED_ENVS = ["API_URL", "PRODUCTION"];
 
 REQUIRED_ENVS.map((key) => {
   const value = process.env[key];
