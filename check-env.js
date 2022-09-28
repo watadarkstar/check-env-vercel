@@ -1,9 +1,9 @@
 require("dotenv").config();
 
 const REQUIRED_ENVS = ["API_URL", "PRODUCTION", "PREVIEW", "DEVELOPMENT"];
+let exit = false;
 
 REQUIRED_ENVS.map((key) => {
-  let exit = false;
   const value = process.env[key];
   if (!value) {
     console.error(`Missing environment variable: ${key}`);
@@ -12,8 +12,8 @@ REQUIRED_ENVS.map((key) => {
     );
     exit = true;
   }
-
-  if (exit) {
-    process.exit(1);
-  }
 });
+
+if (exit) {
+  process.exit(1);
+}
