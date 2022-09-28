@@ -1,8 +1,11 @@
-require("dotenv").config();
-
 const REQUIRED_ENVS = ["API_URL", "PRODUCTION", "PREVIEW", "DEVELOPMENT"];
-const NODE_ENV = process.env.VERCEL_ENV || process.env.NODE_ENV;
+// NODE_ENV is one of "local" | "production" | "development"
+const NODE_ENV = process.env.VERCEL_ENV || process.env.NODE_ENV || "local";
 let exit = false;
+
+require("dotenv").config({
+  path: `.env.${NODE_ENV}`,
+});
 
 REQUIRED_ENVS.map((key) => {
   const value = process.env[key];
