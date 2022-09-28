@@ -8,7 +8,7 @@ REQUIRED_ENVS.map((key) => {
   if (!value) {
     console.error(`Missing environment variable: ${key}`);
     console.error(
-      `To fix this issue add it to the ${process.env.NODE_ENV} environment variables`
+      `To fix this issue add it to the ${process.env.VERCEL_ENV} environment variables`
     );
     exit = true;
   }
