@@ -7,9 +7,7 @@ REQUIRED_ENVS.map((key) => {
   const value = process.env[key];
   if (!value) {
     console.error(`Missing environment variable: ${key}`);
-    console.error(
-      `To fix this issue add it to your .env file locally or on the server`
-    );
+    console.error(`To fix this issue add it to the environment variables`);
     exit = true;
   }
 });
